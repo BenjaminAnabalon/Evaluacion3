@@ -58,9 +58,9 @@
                 <button type="button" class="btn btn-primary ms-3" data-bs-toggle="modal" data-bs-target="#contactModal">
                     Contacto
                 </button>
-                <button type="button" class="btn btn-primary ms-3" data-bs-toggle="modal" data-bs-target="#cartModal">
-                    Carrito
-                </button>
+                <a href="{% url 'ver_carrito' %}">
+                    <button type="button" class="btn btn-primary ms-3" data-bs-toggle="modal" data-bs-target="#cartModal">Carrito</button>
+                </a>
             </div>
             <a href="{% url 'login' %}">
                 <img src="{% static 'ev3/images/user.png' %}" width="80">
@@ -104,23 +104,7 @@
         </div>
     </div>
 </div>
-<!--CArrito de comrpas-->
-<div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="cartModalLabel">Carrito de Compras</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body" id="cartModalBody">
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                <button type="button" class="btn btn-primary">Proceder al Pago</button>
-            </div>
-        </div>
-    </div>
-</div>
+
 <!--Desctripcion-->
     <div class="container">
         <h1>Rodando Seguro: ¡Neumáticos Nuevos, Camino Firme!</h1><br><br><br>

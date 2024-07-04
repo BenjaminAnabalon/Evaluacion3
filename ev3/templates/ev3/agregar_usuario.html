@@ -53,17 +53,8 @@
     <h1>Agregar Usuario</h1>
     <form method="post">
         {% csrf_token %}
-        <label for="id_nombre">Nombre:</label>
-        <input type="text" id="id_nombre" name="nombre" required><br><br>
-        
-        <label for="id_email">Email:</label>
-        <input type="email" id="id_email" name="email" required><br><br>
-        
-        <label for="id_contraseña">Contraseña:</label>
-        <input type="password" id="id_contraseña" name="contraseña" required><br><br>
-        <a href="{% url 'usuarios' %}">
+        {{ form.as_p }}
         <input type="submit" value="Guardar Usuario">
-    </a>
     </form>
 </body>
 </html>

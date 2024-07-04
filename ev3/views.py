@@ -116,6 +116,7 @@ def lista_usuarios(request):
 
 def editar_usuario(request, id):
     usuario = get_object_or_404(Usuario, id=id)
+    
     if request.method == 'POST':
         form = UsuarioForm(request.POST, instance=usuario)
         if form.is_valid():
@@ -162,7 +163,10 @@ def agregar_usuario(request):
     
     return render(request, 'ev3/agregar_usuario.html', {'form': form})
 
-
 def mostrar_compras(request):
     compras = Compra.objects.all()
     return render(request, 'ev3/mostrar_compras.html', {'compras': compras})
+
+
+def panel_de_control(request):
+    return render(request, 'ev3/panel_de_control.html')
