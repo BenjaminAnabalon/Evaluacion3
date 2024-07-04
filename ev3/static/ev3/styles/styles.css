@@ -1,0 +1,223 @@
+body {
+    margin: 0;
+    padding: 0;
+    color: #555;
+    Font-family: Gill Sans, Gill Sans MT, Calibri, sans-serif;
+
+   background: #abb8c3;
+    height: 100vh;
+}
+
+.formulario{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    background: rgb(255, 255, 255);
+    border-radius: 10px;
+}
+
+.formulario h1{
+    text-align: center;
+    padding: 0 0 20px 0;
+    border-bottom: 1px solid silver;
+}
+
+.formulario form{
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+
+form .username{
+    position: relative;
+    border-bottom: 2px solid #ffffff;
+    margin: 30px 0;
+}
+
+.username input{
+    width: 100%;
+    padding: 0 5px;
+    height: 40px;
+    font-size: 16 px;
+    border: none;
+    background:none ;
+    outline: none;
+}
+
+.username label{
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    color: #555;
+    transform: translateY(-50%);
+    font-size: 16px;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.username span::before {
+    content: '';
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #9e2121;
+    transition: .5s;
+}
+
+.username input:focus ~ label,
+.username input:focus ~ label   {
+    top: -5px;
+    color: #9e2121;
+}
+
+.username input:focus ~ span::before,
+.username input:focus ~ span::before   {
+    width: 100%;
+}
+
+.recordar{
+    margin: -5px 0 20px 5px;
+    color: 9e2121;
+    cursor: pointer;
+}
+
+.recordar:hover {
+    text-decoration: underline;
+}
+
+input[type="submit"]{
+    width: 100%;
+    height: 50px;
+    border: 1px solid;
+    background: #9e2121;
+    border-radius: 25px;
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+    outline: none;
+}
+
+input[type="submit"]:hover{
+    border-color: 9e2121;
+    transition: .5s;
+}
+
+.registrarse{
+margin: 30px 0;
+text-align: center;
+font-size: 16px;
+color: 9e2121;
+}
+
+.registrarse a{
+    color: 9e2121;
+    text-decoration: none;
+}
+
+.registrarse a:hover {
+    text-decoration: underline;
+}
+
+#logoo{
+    display: flex;
+    justify-content: center;
+
+}
+
+#titulo{
+    color: #555;
+    display: flex;
+    justify-content: center;
+
+}
+.btn-primary  {
+    --bs-btn-color: #495057;
+    --bs-btn-bg: #fff;
+    --bs-btn-border-color: #abb8c3;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #212529;
+    --bs-btn-hover-border-color: #212529;
+    --bs-btn-focus-shadow-rgb: 49, 132, 253;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #fff;
+    --bs-btn-active-border-color: #000;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: #000;
+    --bs-btn-disabled-border-color: #000;
+}
+
+.btn-outline-success {
+    --bs-btn-color: #495057;
+    --bs-btn-border-color: #abb8c3;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #212529;
+    --bs-btn-hover-border-color: #212529;
+    --bs-btn-focus-shadow-rgb: 49, 132, 253;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #ffffff;
+    --bs-btn-active-border-color: #000000;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #ffffff;
+    --bs-btn-disabled-bg: transparent;
+    --bs-btn-disabled-border-color: #000000;
+    --bs-gradient: none;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+    border-radius: 0 0 8px 8px;
+}
+
+#indicadores {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid #3d1a1a;
+}
+
+#indicadores h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+#indicadores .col-md-4 {
+    margin-bottom: 20px;
+}
+
+#indicadores h5 {
+    margin-bottom: 10px;
+    color: #555;
+}
+
+#indicadores p {
+    color: #777;
+    font-size: 18px;
+}
+
+.btn btn-success add-to-cart {
+
+    --bs-btn-color: #495057;
+    --bs-btn-border-color: #abb8c3;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #212529;
+    --bs-btn-hover-border-color: #212529;
+    --bs-btn-focus-shadow-rgb: 49, 132, 253;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #ffffff;
+    --bs-btn-active-border-color: #000000;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #ffffff;
+    --bs-btn-disabled-bg: transparent;
+    --bs-btn-disabled-border-color: #000000;
+    --bs-gradient: none;
+}
+
+

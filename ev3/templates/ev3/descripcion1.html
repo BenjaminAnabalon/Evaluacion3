@@ -1,0 +1,195 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automóvil XYZ</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="{% static 'ev3/styles/styles1.css' %}">
+    <script src="js/carrito.js" defer></script>
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <a class="navbar-brand" href="#">
+            <img src="{% static 'ev3/images/logo.png' %}"  width="100" height="100">
+
+        </a>
+        <div class="container-fluid">
+            
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{% url 'principal' %}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Mecanicos
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Jose Perez</a></li>
+                            <li><a class="dropdown-item" href="#">Antonio Flores</a></li>
+                            
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Categoria
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="{% url 'descripcion2' %}">Reparacion y Mantencion de Neumaticos</a></li>
+                                <li><a class="dropdown-item" href="{% url 'descripcion1' %}">Reparacion y Mantencion de Fusibles</a></li>
+                                <li><a class="dropdown-item" href="{% url 'descripcion' %}">Mantencion y Cambio de Aceite</a></li>
+                            
+                            
+                        </ul>
+                    </li>
+                    
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Busca aqui" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Buscar</button>
+                </form>
+                <button type="button" class="btn btn-primary ms-3" data-bs-toggle="modal" data-bs-target="#contactModal">
+                    Contacto
+                </button>
+                <button type="button" class="btn btn-primary ms-3" data-bs-toggle="modal" data-bs-target="#cartModal">
+                    Carrito
+                </button>
+            </div>
+            <a href="{% url 'login' %}">
+                <img src="{% static 'ev3/images/user.png' %}" width="80">
+            </a>
+        </div>
+    </nav>
+</div>
+<!--MODAL-->
+<div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="contactModalLabel">Formulario de Contacto</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                        <label for="nombre" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" id="nombre" placeholder="Nombre">
+                    </div>
+                    <div class="mb-3">
+                        <label for="apellido" class="form-label">Apellido</label>
+                        <input type="text" class="form-control" id="apellido" placeholder="Apellido">
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" placeholder="Email">
+                    </div>
+                    <div class="mb-3">
+                        <label for="numero" class="form-label">Número</label>
+                        <input type="text" class="form-control" id="numero" placeholder="Número">
+                    </div>
+                    <div class="mb-3">
+                        <label for="descripcion" class="form-label">Descripción</label>
+                        <textarea class="form-control" id="descripcion" rows="3" placeholder="Descripción"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!--CArrito de comrpas-->
+<div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="cartModalLabel">Carrito de Compras</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="cartModalBody">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary">Proceder al Pago</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Desctripcion-->
+    <div class="container">
+        <h1>El Corazón Eléctrico: ¡Fusibles Nuevos, Problemas Evitados!</h1><br><br><br>
+        
+        <div class="feature">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKDu19NkFiKuz6R-aa10oq0kIdkcnLkQvRJcu9CuiODA&s" alt="Carrocería del Automóvil XYZ">
+            <div class="feature-content">
+                <h2>Conexiones Seguras</h2>
+                <p>El cambio de fusibles en tu vehículo es una práctica esencial que garantiza conexiones eléctricas seguras y un funcionamiento confiable. Los fusibles son dispositivos de protección que previenen daños en el sistema eléctrico al interrumpir el flujo de corriente en caso de sobrecarga o cortocircuito.</p>
+            </div>
+        </div>
+        
+        <div class="feature">
+            <img src="{% static 'ev3/images/fusibles.jpg' %}" alt="Motor del Automóvil XYZ"><br>
+            <div class="feature-content">
+                <h2>Prevención de Averías</h2>
+                <p>Ignorar la necesidad de cambiar fusibles puede llevar a una serie de problemas eléctricos, desde luces que no funcionan hasta fallos en sistemas vitales como el arranque del motor o los frenos antibloqueo (ABS). Los fusibles son elementos clave para evitar daños mayores en el sistema eléctrico de tu automóvil.</p>            
+            
+        </div>
+    </div>
+        
+        <div class="feature">
+            <img src="data:image/jpeg;base64,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" alt="Interior del Automóvil XYZ">
+            <div class="feature-content">
+                <h2>Mantenimiento Proactivo</h2>
+                <p>En resumen, el cambio regular de fusibles es una forma de mantenimiento proactivo que contribuye a la seguridad y fiabilidad de tu vehículo. Al igual que el cambio de aceite, dedicar tiempo a esta tarea sencilla puede ahorrarte dolores de cabeza y costosas reparaciones en el futuro. Recuerda, unos fusibles nuevos significan un sistema eléctrico más robusto y menos probabilidades de quedarte varado en el camino.</p>
+            </div>
+        </div>
+        
+       
+    </div>
+    <footer>
+        <p>Benjamin Anabalon</p><br><br><br>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+           
+            function cargarCarrito() {
+                var carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+                actualizarModalCarrito(carrito);
+            }
+
+          
+            function actualizarModalCarrito(carrito) {
+                var cuerpoModalCarrito = $('#cartModalBody');
+                cuerpoModalCarrito.empty();
+                if (carrito.length === 0) {
+                    cuerpoModalCarrito.append('<p>Tu carrito está vacío.</p>');
+                } else {
+                    var precioTotal = 0;
+                    var listaCarrito = $('<ul class="list-group"></ul>');
+                    carrito.forEach(function(item, index) {
+                        precioTotal += item.precio * item.cantidad;
+                        listaCarrito.append('<li class="list-group-item">' +
+                            item.titulo + ': ' + item.descripcion + ' - $' + item.precio +
+                            ' <button class="btn btn-danger btn-sm remove-from-cart" data-index="' + index + '">X</button>' +
+                            ' Cantidad: ' + item.cantidad +
+                            '</li>');
+                    });
+                    cuerpoModalCarrito.append(listaCarrito);
+                    cuerpoModalCarrito.append('<p class="mt-3">Total: $' + precioTotal + '</p>');
+                }
+            }
+
+            
+            cargarCarrito();
+        });
+    </script>
+</body>
+</html>

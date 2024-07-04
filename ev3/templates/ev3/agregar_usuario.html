@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar Usuario</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            width: 400px;
+            margin: auto;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        input[type="text"], input[type="email"], input[type="password"] {
+            width: calc(100% - 20px);
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+        }
+
+        input[type="submit"] {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <h1>Agregar Usuario</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="id_nombre">Nombre:</label>
+        <input type="text" id="id_nombre" name="nombre" required><br><br>
+        
+        <label for="id_email">Email:</label>
+        <input type="email" id="id_email" name="email" required><br><br>
+        
+        <label for="id_contraseña">Contraseña:</label>
+        <input type="password" id="id_contraseña" name="contraseña" required><br><br>
+        <a href="{% url 'usuarios' %}">
+        <input type="submit" value="Guardar Usuario">
+    </a>
+    </form>
+</body>
+</html>
